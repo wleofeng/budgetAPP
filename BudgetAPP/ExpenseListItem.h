@@ -1,5 +1,5 @@
 //
-//  BudgetListItem.h
+//  ExpenseListItem.h
 //  BudgetAPP
 //
 //  Created by Wo Jun Feng on 10/20/15.
@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BudgetListItem : NSObject
+@interface ExpenseListItem : NSObject
 
 @property (nonatomic, strong) NSString *source;
-@property (nonatomic, strong) NSDecimalNumber *amount;
+@property (nonatomic) NSDecimalNumber *amount;
 
 -(instancetype)initWithSource:(NSString *)source amount:(NSDecimalNumber *)amount;
 

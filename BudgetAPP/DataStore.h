@@ -13,6 +13,6 @@
 +(DataStore *)sharedDataStore;
 
 @property (nonatomic, strong) NSMutableArray *budgetListItems;
-
+@property (nonatomic, strong) NSMutableArray *expenseListItems;
 
 @end

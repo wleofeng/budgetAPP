@@ -29,6 +29,7 @@
     self = [super init];
     if(self) {
         _budgetListItems = [[NSMutableArray alloc] init];
+        _expenseListItems = [[NSMutableArray alloc] init];
     }
     
     return self;
