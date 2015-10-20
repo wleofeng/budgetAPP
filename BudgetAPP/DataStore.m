@@ -30,6 +30,8 @@
     if(self) {
         _budgetListItems = [[NSMutableArray alloc] init];
         _expenseListItems = [[NSMutableArray alloc] init];
+        _startDate = [[NSDate alloc] init];
+        _endDate = [[NSDate alloc] init];
     }
     
     return self;

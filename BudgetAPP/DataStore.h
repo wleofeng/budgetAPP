@@ -14,5 +14,7 @@
 
 @property (nonatomic, strong) NSMutableArray *budgetListItems;
 @property (nonatomic, strong) NSMutableArray *expenseListItems;
+@property (nonatomic, strong) NSDate *startDate;
+@property (nonatomic, strong) NSDate *endDate;
 
 @end

@@ -156,7 +156,6 @@
     self.otherTextField.text = @"";
     self.amount = @"";
     self.otherTextField.hidden = YES;
-    
 }
 
 @end

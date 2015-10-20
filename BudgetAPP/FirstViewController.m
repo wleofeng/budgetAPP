@@ -13,10 +13,12 @@
 @interface FirstViewController ()
 @property (weak, nonatomic) IBOutlet UIDatePicker *startDatePicker;
 @property (weak, nonatomic) IBOutlet UIDatePicker *endDatePicker;
-//@property (weak, nonatomic) IBOutlet UILabel *mainBudgetTextView;
-//@property (weak, nonatomic) IBOutlet UILabel *sideBudgetTextView;
-@property (weak, nonatomic) IBOutlet UILabel *sideBudgetAmountTextView;
 @property (weak, nonatomic) IBOutlet UILabel *mainBudgetAmountTextView;
+@property (weak, nonatomic) IBOutlet UILabel *sideBudgetAmountTextView;
+@property (weak, nonatomic) IBOutlet UILabel *startDateTextLabel;
+@property (weak, nonatomic) IBOutlet UILabel *endDateTextLabel;
+@property (weak, nonatomic) IBOutlet UILabel *completedBudgetSetupLabel;
+
 
 @property (nonatomic, strong) NSMutableArray *budgetList;
 
@@ -39,8 +41,10 @@
     
     //display total budget
     self.budgetList = [DataStore sharedDataStore].budgetListItems;
+    self.startDatePicker.date = [DataStore sharedDataStore].startDate;
+    self.endDatePicker.date = [DataStore sharedDataStore].endDate;
 
-//    self.sideBudgetAmountTextView.text = @"2100012.80";
+    //self.sideBudgetAmountTextView.text = @"2100012.80";
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -56,6 +60,18 @@
     self.mainBudgetAmountTextView.text = [total stringValue];
 }
 
+- (IBAction)saveButtonTapped:(id)sender {
+    //lock in values
+    [self disableEditingForBudgetSetup];
+    self.completedBudgetSetupLabel.hidden = NO;
+}
+
+- (IBAction)resetButtonTapped:(id)sender {
+    [self enableEditingForBudgetSetup];
+    self.completedBudgetSetupLabel.hidden = YES;
+}
+
+
 - (void)setWhiteColorForDatePicker:(UIDatePicker *)datePicker{
     [datePicker setValue:[UIColor whiteColor] forKeyPath:@"textColor"];
     SEL selector = NSSelectorFromString( @"setHighlightsToday:" );
@@ -66,6 +82,21 @@
     [invocation setSelector:selector];
     [invocation setArgument:&no atIndex:2];
     [invocation invokeWithTarget:datePicker];
+}
+
+
+- (void)disableEditingForBudgetSetup{
+    self.startDatePicker.hidden = YES;
+    self.endDatePicker.hidden = YES;
+    self.startDateTextLabel.hidden = YES;
+    self.endDateTextLabel.hidden = YES;
+}
+
+- (void)enableEditingForBudgetSetup{
+    self.startDatePicker.hidden = NO;
+    self.endDatePicker.hidden = NO;
+    self.startDateTextLabel.hidden = NO;
+    self.endDateTextLabel.hidden = NO;
 }
 
 
