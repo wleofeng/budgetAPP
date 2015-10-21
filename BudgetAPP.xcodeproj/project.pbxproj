@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C0F45161BD80AB700F9E30F /* SummaryBudgetListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0F45151BD80AB700F9E30F /* SummaryBudgetListTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		4C0F45191BD80F9900F9E30F /* SummaryExpenseListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0F45181BD80F9900F9E30F /* SummaryExpenseListTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 		4C40A5201BD68344003E9865 /* SettingsAddNewBudgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C40A51F1BD68344003E9865 /* SettingsAddNewBudgetViewController.m */; settings = {ASSET_TAGS = (); }; };
 		4C40A5231BD68438003E9865 /* DataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C40A5221BD68438003E9865 /* DataStore.m */; settings = {ASSET_TAGS = (); }; };
 		4C40A5261BD68562003E9865 /* BudgetListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C40A5251BD68562003E9865 /* BudgetListItem.m */; settings = {ASSET_TAGS = (); }; };
@@ -45,6 +47,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C0F45141BD80AB700F9E30F /* SummaryBudgetListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummaryBudgetListTableViewController.h; sourceTree = "<group>"; };
+		4C0F45151BD80AB700F9E30F /* SummaryBudgetListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SummaryBudgetListTableViewController.m; sourceTree = "<group>"; };
+		4C0F45171BD80F9900F9E30F /* SummaryExpenseListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummaryExpenseListTableViewController.h; sourceTree = "<group>"; };
+		4C0F45181BD80F9900F9E30F /* SummaryExpenseListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SummaryExpenseListTableViewController.m; sourceTree = "<group>"; };
 		4C40A51E1BD68344003E9865 /* SettingsAddNewBudgetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsAddNewBudgetViewController.h; sourceTree = "<group>"; };
 		4C40A51F1BD68344003E9865 /* SettingsAddNewBudgetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsAddNewBudgetViewController.m; sourceTree = "<group>"; };
 		4C40A5211BD68438003E9865 /* DataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataStore.h; sourceTree = "<group>"; };
@@ -132,6 +138,10 @@
 				4CD0CEF51BCF318B0003A3C1 /* ExpensesViewController.m */,
 				4C40A5301BD71A5B003E9865 /* SummaryTableViewController.h */,
 				4C40A5311BD71A5B003E9865 /* SummaryTableViewController.m */,
+				4C0F45141BD80AB700F9E30F /* SummaryBudgetListTableViewController.h */,
+				4C0F45151BD80AB700F9E30F /* SummaryBudgetListTableViewController.m */,
+				4C0F45171BD80F9900F9E30F /* SummaryExpenseListTableViewController.h */,
+				4C0F45181BD80F9900F9E30F /* SummaryExpenseListTableViewController.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -362,6 +372,8 @@
 				4CAC04EB1BD494A9009C1592 /* XYZToDoListTableViewController.m in Sources */,
 				4C40A5231BD68438003E9865 /* DataStore.m in Sources */,
 				4C40A5321BD71A5B003E9865 /* SummaryTableViewController.m in Sources */,
+				4C0F45161BD80AB700F9E30F /* SummaryBudgetListTableViewController.m in Sources */,
+				4C0F45191BD80F9900F9E30F /* SummaryExpenseListTableViewController.m in Sources */,
 				4CBF8E6C1BD457C100C7ECAC /* SettingsViewBudgetTableViewController.m in Sources */,
 				4C40A52C1BD6BF25003E9865 /* ExpenseListItem.m in Sources */,
 				4C40A5201BD68344003E9865 /* SettingsAddNewBudgetViewController.m in Sources */,
