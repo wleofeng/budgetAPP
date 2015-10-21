@@ -27,9 +27,9 @@
 @property (strong, nonatomic) NSDecimalNumber *totalAmountSpent;
 @property (strong, nonatomic) NSDecimalNumber *totalAmountLeft;
 
-@property (strong, nonatomic) NSDecimalNumber *totalDays;
-@property (strong, nonatomic) NSDecimalNumber *totalDaysElapsed;
-@property (strong, nonatomic) NSDecimalNumber *totalDaysTilExhausted;
+@property (nonatomic) NSUInteger totalDays;
+@property (nonatomic) NSUInteger totalDaysElapsed;
+@property (nonatomic) NSUInteger totalDaysTilExhausted;
 
 @property (strong, nonatomic) NSDecimalNumber *dailyAllowance;
 @property (strong, nonatomic) NSDecimalNumber *actualDailyAmountSpent;
@@ -48,6 +48,7 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+       
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -63,6 +64,12 @@
     [self calculateAmountSpent];
     [self calculateTotalAmountLeft];
     [self calculateTotalDays];
+    [self calculateTotalDaysElpased];
+    [self calculateTotalDaysUntilBudgetExhausted];
+    [self calculateDailyAllowance];
+    [self calculateActualDailyAmountSpent];
+    [self calculateAllowedVSActualDailySpending];
+    [self calculateDailyAllowanceWithAmountLeft];
     
     [self displayResultToCell];
 }
@@ -92,24 +99,58 @@
 }
 
 - (void)calculateTotalDays{
-//    self.totalDays = [DataStore sharedDataStore].startDate;
+    NSDate *startDate = [DataStore sharedDataStore].startDate;
+    NSDate *endDate = [DataStore sharedDataStore].endDate;
+
+    NSTimeInterval secondsBetween = [endDate timeIntervalSinceDate:startDate];
     
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateStyle:NSDateFormatterLongStyle];
-    [formatter setTimeStyle:NSDateFormatterMediumStyle];
+    int numberOfDays = secondsBetween / 86400;
     
-//    NSDate *date = [DataStore sharedDataStore].startDate;
-    NSString *date = [formatter stringFromDate:[DataStore sharedDataStore].startDate];
-//    - [DataStore sharedDataStore].endDate;
+    self.totalDays = (NSUInteger)numberOfDays;
 }
+
+- (void)calculateTotalDaysElpased{
+    NSDate *startDate = [DataStore sharedDataStore].startDate;
+    NSDate *todayDate = [NSDate date];
+    
+    NSTimeInterval secondsBetween = [todayDate timeIntervalSinceDate:startDate];
+    
+    int numberOfDays = secondsBetween / 86400;
+    
+    self.totalDaysElapsed = (NSUInteger)numberOfDays;
+}
+
+- (void)calculateTotalDaysUntilBudgetExhausted{
+    self.totalDaysTilExhausted = self.totalDays - self.totalDaysElapsed;
+}
+
+- (void)calculateDailyAllowance{
+    NSDecimalNumber* totalDays = [[NSDecimalNumber alloc] initWithString:[NSString stringWithFormat:@"%2lu", (unsigned long)self.totalDays]];
+    self.dailyAllowance = [self.totalAmountReceived decimalNumberByDividingBy:totalDays];
+}
+
+- (void)calculateActualDailyAmountSpent{
+    NSDecimalNumber* totalDaysElapased = [[NSDecimalNumber alloc] initWithString:[NSString stringWithFormat:@"%2lu", (unsigned long)self.totalDaysElapsed]];
+    self.actualDailyAmountSpent = [self.totalAmountSpent decimalNumberByDividingBy:totalDaysElapased];
+}
+
+- (void)calculateAllowedVSActualDailySpending{
+    self.allowedSpentDiff = [self.dailyAllowance decimalNumberBySubtracting:self.actualDailyAmountSpent];
+}
+
+- (void)calculateDailyAllowanceWithAmountLeft{
+    NSDecimalNumber* totalDaysTilExhausted = [[NSDecimalNumber alloc] initWithString:[NSString stringWithFormat:@"%2lu", (unsigned long)self.totalDaysTilExhausted]];
+    self.allowanceWithAmountLeft = [self.totalAmountLeft decimalNumberByDividingBy:totalDaysTilExhausted];
+}
+
 
 - (void)displayResultToCell{
     self.totalAmountReceivedCell.detailTextLabel.text = [self convertToDollarStringWithNSDecialmalNumber:self.totalAmountReceived];
     self.totalAmountSpentCell.detailTextLabel.text = [self convertToDollarStringWithNSDecialmalNumber:self.totalAmountSpent];
     self.totalAmountLeftCell.detailTextLabel.text = [self convertToDollarStringWithNSDecialmalNumber:self.totalAmountLeft];
-    self.totalDaysCell.detailTextLabel.text = [self convertToDollarStringWithNSDecialmalNumber:self.totalDays];
-    self.totalDaysElapsedCell.detailTextLabel.text = [self convertToDollarStringWithNSDecialmalNumber:self.totalDaysElapsed];
-    self.totalDaysTilExhaustedCell.detailTextLabel.text = [self convertToDollarStringWithNSDecialmalNumber:self.totalDaysTilExhausted];
+    self.totalDaysCell.detailTextLabel.text = [NSString stringWithFormat:@"%lu", self.totalDays];
+    self.totalDaysElapsedCell.detailTextLabel.text = [NSString stringWithFormat:@"%lu", self.totalDaysElapsed];
+    self.totalDaysTilExhaustedCell.detailTextLabel.text = [NSString stringWithFormat:@"%lu", self.totalDaysTilExhausted];
     self.dailyAllowanceCell.detailTextLabel.text = [self convertToDollarStringWithNSDecialmalNumber:self.dailyAllowance];
     self.actualDailyAmountSpentCell.detailTextLabel.text = [self convertToDollarStringWithNSDecialmalNumber:self.actualDailyAmountSpent];
     self.allowedSpentDiffCell.detailTextLabel.text = [self convertToDollarStringWithNSDecialmalNumber:self.allowedSpentDiff];
