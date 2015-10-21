@@ -152,7 +152,7 @@
     ExpenseListItem *newExpenseItem = [[ExpenseListItem alloc]initWithSource:self.expenseSource amount:amount];
     [self.expenseList addObject: newExpenseItem];
     
-    self.amountTextView.text = @"";
+    self.amountTextView.text = @"Saved!";
     self.otherTextField.text = @"";
     self.amount = @"";
     self.otherTextField.hidden = YES;
