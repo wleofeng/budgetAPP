@@ -9,6 +9,8 @@
 #import "SettingsViewController.h"
 #import "BudgetListItem.h"
 #import "DataStore.h"
+#import  "ionicons.h"
+//#import <Foundation/Foundation.h>
 
 @interface SettingsViewController ()
 @property (weak, nonatomic) IBOutlet UIDatePicker *startDatePicker;
@@ -48,11 +50,37 @@
 //    self.endDatePicker.date = [DataStore sharedDataStore].endDate;
 
     //self.sideBudgetAmountTextView.text = @"2100012.80";
+    
+//    UIImage *icon = [IonIcons imageWithIcon:@"\uf411"
+//                                  iconColor:[UIColor colorWithRed:0.225 green:0.1965 blue:1.0 alpha:1.0]
+//                                   iconSize:40.0f
+//                                  imageSize:CGSizeMake(90.0f, 90.0f)];
+//    
+//    if (self.tabBarController) {
+//        UITabBarItem *tbi = [self tabBarItem];
+//        [tbi setImage:icon];
+//        [self setTabBarItem:tbi];
+//    }
+    
 }
+
+
+
+
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+//    if (self.tabBarController) {
+////        UITabBarItem *tabBarItem = [self tabBarItem];
+//        UITabBarItem *tbi = [self tabBarItem];
+//        [tbi setImage:[UIImage imageNamed:@"tab-bar-item-icon"]];
+//        [tbi setTitle:@"BUDGET"];
+////        [tbi setBadgeValue:@""];
+//        [self setTabBarItem:tbi];
+//    }
+//    
 
     NSDecimalNumber* total = [[NSDecimalNumber alloc] initWithString:[NSString stringWithFormat:@"%f", 0.0]];
 

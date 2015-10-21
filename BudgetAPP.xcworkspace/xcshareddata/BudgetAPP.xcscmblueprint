@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "7277E639DA60EF884A53F390F36A4E629A2B3C41",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "7277E639DA60EF884A53F390F36A4E629A2B3C41" : 0,
+    "DDD0B127AA2C9470639FD68039543301E1859057" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "9E5B034C-4D26-4A85-82F2-DDED94748C3F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "7277E639DA60EF884A53F390F36A4E629A2B3C41" : "budgetAPP\/",
+    "DDD0B127AA2C9470639FD68039543301E1859057" : ".."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "BudgetAPP",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "BudgetAPP.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:wojunfeng\/budgetAPP.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7277E639DA60EF884A53F390F36A4E629A2B3C41"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/wojunfeng\/BudgetAPP.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DDD0B127AA2C9470639FD68039543301E1859057"
+    }
+  ]
+}

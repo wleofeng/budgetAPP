@@ -9,6 +9,8 @@
 #import "ExpensesViewController.h"
 #import "ExpenseListItem.h"
 #import "DataStore.h"
+#import "ionicons.h"
+
 
 @interface ExpensesViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *amountTextView;
@@ -44,6 +46,18 @@
     self.amount = @"";
     
     self.expenseList = [DataStore sharedDataStore].expenseListItems;
+    
+    //setting icons
+//    UIImage *icon = [IonIcons imageWithIcon:@"\uf119"
+//                                  iconColor:[UIColor colorWithRed:0.225 green:0.1965 blue:1.0 alpha:1.0]
+//                                   iconSize:40.0f
+//                                  imageSize:CGSizeMake(90.0f, 90.0f)];
+//    
+//    if (self.tabBarController) {
+//        UITabBarItem *tbi = [self tabBarItem];
+//        [tbi setImage:icon];
+//        [self setTabBarItem:tbi];
+//    }
 }
 
 - (IBAction)number1Tapped:(id)sender {
