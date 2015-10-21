@@ -6,11 +6,11 @@
 //  Copyright © 2015 Wo Jun Feng. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "ExpensesViewController.h"
 #import "ExpenseListItem.h"
 #import "DataStore.h"
 
-@interface SecondViewController ()
+@interface ExpensesViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *amountTextView;
 @property (weak, nonatomic) IBOutlet UIButton *number1Button;
 @property (weak, nonatomic) IBOutlet UIButton *number2Button;
@@ -33,7 +33,7 @@
 
 @end
 
-@implementation SecondViewController
+@implementation ExpensesViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -6,11 +6,11 @@
 //  Copyright © 2015 Wo Jun Feng. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "SettingsViewController.h"
 #import "BudgetListItem.h"
 #import "DataStore.h"
 
-@interface FirstViewController ()
+@interface SettingsViewController ()
 @property (weak, nonatomic) IBOutlet UIDatePicker *startDatePicker;
 @property (weak, nonatomic) IBOutlet UIDatePicker *endDatePicker;
 @property (weak, nonatomic) IBOutlet UILabel *mainBudgetAmountTextView;
@@ -18,13 +18,16 @@
 @property (weak, nonatomic) IBOutlet UILabel *startDateTextLabel;
 @property (weak, nonatomic) IBOutlet UILabel *endDateTextLabel;
 @property (weak, nonatomic) IBOutlet UILabel *completedBudgetSetupLabel;
+@property (weak, nonatomic) IBOutlet UIButton *saveButton;
+@property (weak, nonatomic) IBOutlet UIButton *resetButton;
+@property (weak, nonatomic) IBOutlet UIButton *editButton;
 
 
 @property (nonatomic, strong) NSMutableArray *budgetList;
 
 @end
 
-@implementation FirstViewController
+@implementation SettingsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -41,8 +44,8 @@
     
     //display total budget
     self.budgetList = [DataStore sharedDataStore].budgetListItems;
-    self.startDatePicker.date = [DataStore sharedDataStore].startDate;
-    self.endDatePicker.date = [DataStore sharedDataStore].endDate;
+//    self.startDatePicker.date = [DataStore sharedDataStore].startDate;
+//    self.endDatePicker.date = [DataStore sharedDataStore].endDate;
 
     //self.sideBudgetAmountTextView.text = @"2100012.80";
 }
@@ -63,12 +66,14 @@
 - (IBAction)saveButtonTapped:(id)sender {
     //lock in values
     [self disableEditingForBudgetSetup];
-    self.completedBudgetSetupLabel.hidden = NO;
+    
+    //set start and end dates to data store class
+    [DataStore sharedDataStore].startDate =  self.startDatePicker.date;
+    [DataStore sharedDataStore].endDate =  self.endDatePicker.date;
 }
 
 - (IBAction)resetButtonTapped:(id)sender {
     [self enableEditingForBudgetSetup];
-    self.completedBudgetSetupLabel.hidden = YES;
 }
 
 
@@ -84,12 +89,15 @@
     [invocation invokeWithTarget:datePicker];
 }
 
-
 - (void)disableEditingForBudgetSetup{
     self.startDatePicker.hidden = YES;
     self.endDatePicker.hidden = YES;
     self.startDateTextLabel.hidden = YES;
     self.endDateTextLabel.hidden = YES;
+    self.completedBudgetSetupLabel.hidden = NO;
+    self.resetButton.hidden = NO;
+    self.saveButton.hidden = YES;
+    self.editButton.hidden = YES;
 }
 
 - (void)enableEditingForBudgetSetup{
@@ -97,6 +105,10 @@
     self.endDatePicker.hidden = NO;
     self.startDateTextLabel.hidden = NO;
     self.endDateTextLabel.hidden = NO;
+    self.completedBudgetSetupLabel.hidden = YES;
+    self.saveButton.hidden = NO;
+    self.resetButton.hidden = YES;
+    self.editButton.hidden = NO;
 }
 
 

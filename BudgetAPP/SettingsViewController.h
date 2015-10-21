@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  FirstViewController.h
 //  BudgetAPP
 //
 //  Created by Wo Jun Feng on 10/14/15.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
+@interface SettingsViewController : UIViewController
 
 
 @end

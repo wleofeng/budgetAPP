@@ -8,7 +8,7 @@
         <!--Budget Settings-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="SettingsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -34,18 +34,6 @@
                                 </state>
                                 <connections>
                                     <action selector="saveButtonTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="zd9-mK-paK"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZK0-yw-8oc">
-                                <rect key="frame" x="301" y="637" width="41" height="30"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                <state key="normal" title="Reset">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="resetButtonTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Itj-Xj-BQr"/>
                                 </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="s4h-Fr-Nou">
@@ -264,6 +252,18 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZK0-yw-8oc">
+                                <rect key="frame" x="187" y="637" width="41" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Reset">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetButtonTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Itj-Xj-BQr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -291,9 +291,12 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="completedBudgetSetupLabel" destination="yTd-F0-ZhV" id="I3J-8T-Zb1"/>
+                        <outlet property="editButton" destination="Jlf-BV-57m" id="fkj-Ee-Q2A"/>
                         <outlet property="endDatePicker" destination="aQg-Pq-dwz" id="IQa-PA-MbK"/>
                         <outlet property="endDateTextLabel" destination="wEd-sB-puk" id="N4d-iP-Gre"/>
                         <outlet property="mainBudgetAmountTextView" destination="bYx-vQ-M4v" id="h26-EE-Ixt"/>
+                        <outlet property="resetButton" destination="ZK0-yw-8oc" id="s3g-1X-LPc"/>
+                        <outlet property="saveButton" destination="hiz-32-SjY" id="zSD-Px-3qC"/>
                         <outlet property="sideBudgetAmountTextView" destination="c0q-j5-7QX" id="hQg-It-1SX"/>
                         <outlet property="startDatePicker" destination="s4h-Fr-Nou" id="Dgs-MQ-xvR"/>
                         <outlet property="startDateTextLabel" destination="9nP-Bb-gCg" id="83T-PQ-LV9"/>
@@ -325,7 +328,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="W0C-bi-mbp">
@@ -365,10 +368,10 @@
             </objects>
             <point key="canvasLocation" x="2663" y="-407"/>
         </scene>
-        <!--Expense-->
+        <!--Expenses-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" customClass="ExpensesViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -662,7 +665,7 @@
                             <constraint firstItem="xVR-z3-Q05" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" id="rZ0-3b-vkV"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Expense" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Expenses" image="second" id="cPa-gy-q4n"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="amountTextView" destination="8Ot-0M-FE3" id="jWv-8N-aok"/>
@@ -710,17 +713,17 @@
         <!--Summary-->
         <scene sceneID="lhY-zu-PLz">
             <objects>
-                <tableViewController id="Pf5-yf-itb" sceneMemberID="viewController">
+                <tableViewController id="Pf5-yf-itb" customClass="SummaryTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="QTa-Eq-dw9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection id="IKb-Lg-ZXy">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="3wc-l9-ott" detailTextLabel="ghE-dE-BYW" style="IBUITableViewCellStyleValue1" id="tRd-L6-o1H">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TotalAmountReceived" textLabel="3wc-l9-ott" detailTextLabel="ghE-dE-BYW" style="IBUITableViewCellStyleValue1" id="tRd-L6-o1H">
                                         <rect key="frame" x="0.0" y="35" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tRd-L6-o1H" id="XSe-Mx-kkc">
@@ -1024,6 +1027,18 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Summary" id="Aey-fS-Ta0"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="actualDailyAmountSpentCell" destination="PYK-qO-bHg" id="Qkl-3S-QB8"/>
+                        <outlet property="allowanceWithAmountLeftCell" destination="zua-SC-vAd" id="FXQ-C2-kjR"/>
+                        <outlet property="allowedSpentDiffCell" destination="0Ra-7C-xCa" id="zUd-os-FQG"/>
+                        <outlet property="dailyAllowanceCell" destination="Omk-G9-DAe" id="fmz-sj-dky"/>
+                        <outlet property="totalAmountLeftCell" destination="4Lg-6c-Ce9" id="uNw-UT-9Gw"/>
+                        <outlet property="totalAmountReceivedCell" destination="tRd-L6-o1H" id="bB2-79-9OK"/>
+                        <outlet property="totalAmountSpentCell" destination="n72-ZG-mGZ" id="l6F-5V-sn5"/>
+                        <outlet property="totalDaysCell" destination="Pgd-hR-Xd8" id="AhS-c9-LII"/>
+                        <outlet property="totalDaysElapsedCell" destination="s6d-qU-w0D" id="lnQ-Dk-ROw"/>
+                        <outlet property="totalDaysTilExhaustedCell" destination="dZL-9o-iC3" id="vdF-1C-oAT"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bAH-Xy-Boa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
