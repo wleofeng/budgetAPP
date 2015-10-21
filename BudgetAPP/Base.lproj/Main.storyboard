@@ -169,15 +169,8 @@
                                                     <action selector="saveButtonTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="zd9-mK-paK"/>
                                                 </connections>
                                             </button>
-                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Budget setup completed!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yTd-F0-ZhV">
-                                                <rect key="frame" x="157" y="8" width="203" height="21"/>
-                                                <animations/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZK0-yw-8oc">
-                                                <rect key="frame" x="143" y="34" width="41" height="30"/>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZK0-yw-8oc">
+                                                <rect key="frame" x="186" y="41" width="41" height="30"/>
                                                 <animations/>
                                                 <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
@@ -193,9 +186,18 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="hiz-32-SjY" firstAttribute="centerX" secondItem="JX7-W8-pX0" secondAttribute="centerX" id="1aV-ho-xmx"/>
+                                            <constraint firstItem="ZK0-yw-8oc" firstAttribute="centerX" secondItem="JX7-W8-pX0" secondAttribute="centerX" id="xM2-W6-A0P"/>
+                                            <constraint firstItem="ZK0-yw-8oc" firstAttribute="centerY" secondItem="JX7-W8-pX0" secondAttribute="centerY" id="xq2-Kw-OVN"/>
                                             <constraint firstItem="hiz-32-SjY" firstAttribute="centerY" secondItem="JX7-W8-pX0" secondAttribute="centerY" id="zis-nT-6iW"/>
                                         </constraints>
                                     </view>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Budget setup completed!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yTd-F0-ZhV">
+                                        <rect key="frame" x="106" y="183" width="202.5" height="20.5"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -210,6 +212,8 @@
                                     <constraint firstAttribute="trailing" secondItem="JX7-W8-pX0" secondAttribute="trailing" id="EUt-08-swf"/>
                                     <constraint firstItem="s4h-Fr-Nou" firstAttribute="top" secondItem="9nP-Bb-gCg" secondAttribute="bottom" constant="10" id="FK4-xm-hUc"/>
                                     <constraint firstAttribute="bottom" secondItem="JX7-W8-pX0" secondAttribute="bottom" id="G4l-re-ITi"/>
+                                    <constraint firstItem="yTd-F0-ZhV" firstAttribute="centerX" secondItem="ceP-QQ-wxZ" secondAttribute="centerX" id="KDt-Gy-0rL"/>
+                                    <constraint firstItem="yTd-F0-ZhV" firstAttribute="centerY" secondItem="ceP-QQ-wxZ" secondAttribute="centerY" multiplier="0.75" id="XtA-nP-LYQ"/>
                                     <constraint firstItem="aQg-Pq-dwz" firstAttribute="leading" secondItem="ceP-QQ-wxZ" secondAttribute="leading" id="Zgt-YQ-7aE"/>
                                     <constraint firstItem="aQg-Pq-dwz" firstAttribute="trailing" secondItem="ceP-QQ-wxZ" secondAttribute="trailing" id="h0c-4o-qNj"/>
                                     <constraint firstItem="aQg-Pq-dwz" firstAttribute="centerY" secondItem="ceP-QQ-wxZ" secondAttribute="centerY" multiplier="1.3" id="tW7-cf-CNh"/>
@@ -1095,10 +1099,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dyu-ml-Mfc">
-                                <rect key="frame" x="236" y="169" width="97" height="30"/>
+                                <rect key="frame" x="198" y="169" width="97" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Budget Source" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="exs-H8-LzS">
                                 <rect key="frame" x="60" y="169" width="117" height="30"/>
@@ -1106,13 +1110,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Please enter the following:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="heN-nF-YZl">
-                                <rect key="frame" x="60" y="86" width="235" height="40"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WjG-lP-Xqp">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WjG-lP-Xqp">
                                 <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                                 <animations/>
                                 <items>
@@ -1130,9 +1128,20 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Please enter the following:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="heN-nF-YZl">
+                                <rect key="frame" x="60" y="112" width="235" height="40"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="WjG-lP-Xqp" secondAttribute="trailing" constant="-20" id="UsP-yK-qt7"/>
+                            <constraint firstItem="WjG-lP-Xqp" firstAttribute="top" secondItem="U3P-o3-ywT" secondAttribute="bottom" id="kFG-AH-sa6"/>
+                            <constraint firstItem="WjG-lP-Xqp" firstAttribute="leading" secondItem="n9i-UB-BRx" secondAttribute="leadingMargin" constant="-20" id="pXm-zG-Qhv"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tk9-uC-hE0"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
