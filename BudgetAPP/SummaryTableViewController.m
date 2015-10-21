@@ -48,6 +48,9 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.totalDays = 1;
+    self.totalDaysElapsed = 1;
+    self.totalDaysTilExhausted= 1;
        
 }
 
@@ -107,6 +110,12 @@
     int numberOfDays = secondsBetween / 86400;
     
     self.totalDays = (NSUInteger)numberOfDays;
+    
+//    if (!numberOfDays) {
+//        self.totalDays = 1;
+//    } else {
+//        self.totalDays = (NSUInteger)numberOfDays;
+//    }
 }
 
 - (void)calculateTotalDaysElpased{
@@ -118,20 +127,38 @@
     int numberOfDays = secondsBetween / 86400;
     
     self.totalDaysElapsed = (NSUInteger)numberOfDays;
+    
+//    if (!numberOfDays) {
+//        self.totalDaysElapsed = 1;
+//    } else {
+//        self.totalDaysElapsed = (NSUInteger)numberOfDays;
+//    }
 }
 
 - (void)calculateTotalDaysUntilBudgetExhausted{
     self.totalDaysTilExhausted = self.totalDays - self.totalDaysElapsed;
+    
+//    if (!self.totalDaysTilExhausted) {
+//        self.totalDaysTilExhausted = 1;
+//    }
 }
 
 - (void)calculateDailyAllowance{
-    NSDecimalNumber* totalDays = [[NSDecimalNumber alloc] initWithString:[NSString stringWithFormat:@"%2lu", (unsigned long)self.totalDays]];
-    self.dailyAllowance = [self.totalAmountReceived decimalNumberByDividingBy:totalDays];
+    if (self.totalDays) {
+        NSDecimalNumber* totalDays = [[NSDecimalNumber alloc] initWithString:[NSString stringWithFormat:@"%lu", (unsigned long)self.totalDays]];
+        self.dailyAllowance = [self.totalAmountReceived decimalNumberByDividingBy:totalDays];
+    } else {
+        self.dailyAllowance = self.totalAmountReceived;
+    }
 }
 
 - (void)calculateActualDailyAmountSpent{
-    NSDecimalNumber* totalDaysElapased = [[NSDecimalNumber alloc] initWithString:[NSString stringWithFormat:@"%2lu", (unsigned long)self.totalDaysElapsed]];
-    self.actualDailyAmountSpent = [self.totalAmountSpent decimalNumberByDividingBy:totalDaysElapased];
+    if (self.totalDaysElapsed) {
+        NSDecimalNumber* totalDaysElapased = [[NSDecimalNumber alloc] initWithString:[NSString stringWithFormat:@"%lu", (unsigned long)self.totalDaysElapsed]];
+        self.actualDailyAmountSpent = [self.totalAmountSpent decimalNumberByDividingBy:totalDaysElapased];
+    } else {
+        self.actualDailyAmountSpent = self.totalAmountSpent;
+    }
 }
 
 - (void)calculateAllowedVSActualDailySpending{
@@ -139,10 +166,13 @@
 }
 
 - (void)calculateDailyAllowanceWithAmountLeft{
-    NSDecimalNumber* totalDaysTilExhausted = [[NSDecimalNumber alloc] initWithString:[NSString stringWithFormat:@"%2lu", (unsigned long)self.totalDaysTilExhausted]];
-    self.allowanceWithAmountLeft = [self.totalAmountLeft decimalNumberByDividingBy:totalDaysTilExhausted];
+    if (self.totalDaysTilExhausted) {
+        NSDecimalNumber* totalDaysTilExhausted = [[NSDecimalNumber alloc] initWithString:[NSString stringWithFormat:@"%lu", (unsigned long)self.totalDaysTilExhausted]];
+        self.allowanceWithAmountLeft = [self.totalAmountLeft decimalNumberByDividingBy:totalDaysTilExhausted];
+    } else {
+        self.allowanceWithAmountLeft = self.totalAmountLeft;
+    }
 }
-
 
 - (void)displayResultToCell{
     self.totalAmountReceivedCell.detailTextLabel.text = [self convertToDollarStringWithNSDecialmalNumber:self.totalAmountReceived];
@@ -158,10 +188,8 @@
 }
 
 - (NSString *)convertToDollarStringWithNSDecialmalNumber:(NSDecimalNumber *)number{
-    return [NSString stringWithFormat:@"$%@", [number stringValue]];
+    return [NSString stringWithFormat:@"$%.02f", [number floatValue]];
 }
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
