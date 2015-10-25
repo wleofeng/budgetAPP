@@ -160,16 +160,26 @@
 }
 
 - (IBAction)enterButtonTapped:(id)sender {
-    // save to the expense list object
-    
-    NSDecimalNumber *amount = [NSDecimalNumber decimalNumberWithString:self.amount];
-    ExpenseListItem *newExpenseItem = [[ExpenseListItem alloc]initWithSource:self.expenseSource amount:amount];
-    [self.expenseList addObject: newExpenseItem];
-    
-    self.amountTextView.text = @"Saved!";
-    self.otherTextField.text = @"";
-    self.amount = @"";
-    self.otherTextField.hidden = YES;
+    if ([self isValidAmount:self.amount]) {
+        // save to the expense list object
+        NSDecimalNumber *amount = [NSDecimalNumber decimalNumberWithString:self.amount];
+        ExpenseListItem *newExpenseItem = [[ExpenseListItem alloc]initWithSource:self.expenseSource amount:amount];
+        [self.expenseList addObject: newExpenseItem];
+        
+        self.amountTextView.text = @"Saved!";
+        self.otherTextField.text = @"";
+        self.amount = @"";
+        self.otherTextField.hidden = YES;
+    } else {
+        self.amountTextView.text = @"Invalid!";
+    }
+}
+
+-(BOOL)isValidAmount:(NSString *)amount{
+    if (![amount isEqualToString:@""]) {
+        return YES;
+    }
+    return NO;
 }
 
 @end
