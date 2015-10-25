@@ -166,12 +166,12 @@
         ExpenseListItem *newExpenseItem = [[ExpenseListItem alloc]initWithSource:self.expenseSource amount:amount];
         [self.expenseList addObject: newExpenseItem];
         
-        self.amountTextView.text = @"Saved!";
+        self.amountTextView.text = @"Saved";
         self.otherTextField.text = @"";
         self.amount = @"";
         self.otherTextField.hidden = YES;
     } else {
-        self.amountTextView.text = @"Invalid!";
+        self.amountTextView.text = @"Invalid";
     }
 }
 
