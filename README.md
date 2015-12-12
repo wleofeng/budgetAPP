@@ -1,4 +1,4 @@
-# budgetAPP
+# BudgetAPP
 
 Details - 
 https://medium.com/@wleofeng/making-the-budgetapp-486b195163a0#.wuga4n9yx
