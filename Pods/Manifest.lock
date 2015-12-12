@@ -1,10 +1,10 @@
 PODS:
-  - ionicons (2.0.2)
+  - ionicons (2.0.3)
 
 DEPENDENCIES:
   - ionicons
 
 SPEC CHECKSUMS:
-  ionicons: 5062e3d28d955e2f68cf2b11df2e194c5e6c6147
+  ionicons: ec1e86e6c3316bd9942a7f024080dd75c70dd6a5
 
 COCOAPODS: 0.39.0

@@ -37,7 +37,6 @@
 		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		4E762F23EC34ED4A6FF3312D84E33A40 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
 		5EE99E0822010AD8EEBC9F6934B9E1BF /* IonIcons.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IonIcons.h; path = ionicons/IonIcons.h; sourceTree = "<group>"; };
-		60488F3500ED62887061C0313C18E266 /* ionicons.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = ionicons.ttf; path = ionicons/ionicons.ttf; sourceTree = "<group>"; };
 		6911BECA35E7518D864239B7E898EEF3 /* Pods-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-frameworks.sh"; sourceTree = "<group>"; };
 		82AB37EA51450D67BD0445B92BAB19D3 /* FontInspector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FontInspector.m; path = ionicons/FontInspector.m; sourceTree = "<group>"; };
 		92881839BA5C2E34786EE75ED3F3E78C /* ionicons-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ionicons-prefix.pch"; sourceTree = "<group>"; };
@@ -48,6 +47,7 @@
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BEF3157CC6486C3E55943BC9897B7470 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC7FF98A608A4C624043264FC54E26DE /* ionicons-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ionicons-dummy.m"; sourceTree = "<group>"; };
+		DB2BF92516CD9D724C518FE034E461B1 /* ionicons.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = ionicons.bundle; path = ionicons/ionicons.bundle; sourceTree = "<group>"; };
 		F26A801FD3E14864336556A848B6E355 /* IonIcons.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IonIcons.m; path = ionicons/IonIcons.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,7 +87,7 @@
 				5EE99E0822010AD8EEBC9F6934B9E1BF /* IonIcons.h */,
 				F26A801FD3E14864336556A848B6E355 /* IonIcons.m */,
 				13A9CF75870E4AE45DB644ABCAE6ECED /* ionicons-codes.h */,
-				9787946CFF5BEA4E6AC4B3F429529222 /* Resources */,
+				E2EB520499DF7E54BC07A17619B485A1 /* Resources */,
 				5EED996E7D46A138E1B7EC1A1CA9945B /* Support Files */,
 			);
 			path = ionicons;
@@ -124,14 +124,6 @@
 			);
 			sourceTree = "<group>";
 		};
-		9787946CFF5BEA4E6AC4B3F429529222 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				60488F3500ED62887061C0313C18E266 /* ionicons.ttf */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
 		B3D1D13E0C6553800746CB8FD61CF946 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +153,14 @@
 				3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		E2EB520499DF7E54BC07A17619B485A1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DB2BF92516CD9D724C518FE034E461B1 /* ionicons.bundle */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		E94F1C5E098120BBE9262A34DAC183DE /* Pods */ = {

@@ -7,17 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C0F45161BD80AB700F9E30F /* SummaryBudgetListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0F45151BD80AB700F9E30F /* SummaryBudgetListTableViewController.m */; settings = {ASSET_TAGS = (); }; };
-		4C0F45191BD80F9900F9E30F /* SummaryExpenseListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0F45181BD80F9900F9E30F /* SummaryExpenseListTableViewController.m */; settings = {ASSET_TAGS = (); }; };
-		4C40A5201BD68344003E9865 /* SettingsAddNewBudgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C40A51F1BD68344003E9865 /* SettingsAddNewBudgetViewController.m */; settings = {ASSET_TAGS = (); }; };
-		4C40A5231BD68438003E9865 /* DataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C40A5221BD68438003E9865 /* DataStore.m */; settings = {ASSET_TAGS = (); }; };
-		4C40A5261BD68562003E9865 /* BudgetListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C40A5251BD68562003E9865 /* BudgetListItem.m */; settings = {ASSET_TAGS = (); }; };
-		4C40A52C1BD6BF25003E9865 /* ExpenseListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C40A52B1BD6BF25003E9865 /* ExpenseListItem.m */; settings = {ASSET_TAGS = (); }; };
-		4C40A5321BD71A5B003E9865 /* SummaryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C40A5311BD71A5B003E9865 /* SummaryTableViewController.m */; settings = {ASSET_TAGS = (); }; };
-		4CAC04EB1BD494A9009C1592 /* XYZToDoListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CAC04E61BD494A9009C1592 /* XYZToDoListTableViewController.m */; settings = {ASSET_TAGS = (); }; };
-		4CAC04EC1BD494A9009C1592 /* XYZAddToDoItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CAC04E81BD494A9009C1592 /* XYZAddToDoItemViewController.m */; settings = {ASSET_TAGS = (); }; };
-		4CAC04ED1BD494A9009C1592 /* XYZToDoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CAC04EA1BD494A9009C1592 /* XYZToDoItem.m */; settings = {ASSET_TAGS = (); }; };
-		4CBF8E6C1BD457C100C7ECAC /* SettingsViewBudgetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBF8E6B1BD457C100C7ECAC /* SettingsViewBudgetTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		4C0F45161BD80AB700F9E30F /* SummaryBudgetListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0F45151BD80AB700F9E30F /* SummaryBudgetListTableViewController.m */; };
+		4C0F45191BD80F9900F9E30F /* SummaryExpenseListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0F45181BD80F9900F9E30F /* SummaryExpenseListTableViewController.m */; };
+		4C40A5201BD68344003E9865 /* SettingsAddNewBudgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C40A51F1BD68344003E9865 /* SettingsAddNewBudgetViewController.m */; };
+		4C40A5231BD68438003E9865 /* DataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C40A5221BD68438003E9865 /* DataStore.m */; };
+		4C40A5261BD68562003E9865 /* BudgetListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C40A5251BD68562003E9865 /* BudgetListItem.m */; };
+		4C40A52C1BD6BF25003E9865 /* ExpenseListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C40A52B1BD6BF25003E9865 /* ExpenseListItem.m */; };
+		4C40A5321BD71A5B003E9865 /* SummaryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C40A5311BD71A5B003E9865 /* SummaryTableViewController.m */; };
+		4CBF8E6C1BD457C100C7ECAC /* SettingsViewBudgetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBF8E6B1BD457C100C7ECAC /* SettingsViewBudgetTableViewController.m */; };
 		4CD0CEED1BCF318B0003A3C1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD0CEEC1BCF318B0003A3C1 /* main.m */; };
 		4CD0CEF01BCF318B0003A3C1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD0CEEF1BCF318B0003A3C1 /* AppDelegate.m */; };
 		4CD0CEF31BCF318B0003A3C1 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD0CEF21BCF318B0003A3C1 /* SettingsViewController.m */; };
@@ -27,7 +24,7 @@
 		4CD0CEFE1BCF318B0003A3C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CD0CEFC1BCF318B0003A3C1 /* LaunchScreen.storyboard */; };
 		4CD0CF091BCF318B0003A3C1 /* BudgetAPPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD0CF081BCF318B0003A3C1 /* BudgetAPPTests.m */; };
 		4CD0CF141BCF318B0003A3C1 /* BudgetAPPUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD0CF131BCF318B0003A3C1 /* BudgetAPPUITests.m */; };
-		4CE452A91BD840B9000F80F6 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE452A81BD840B9000F80F6 /* TabBarViewController.m */; settings = {ASSET_TAGS = (); }; };
+		4CE452A91BD840B9000F80F6 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE452A81BD840B9000F80F6 /* TabBarViewController.m */; };
 		58D9BB3DB56B7BC1536E1DFD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C079165993F995361CE3A522 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -63,12 +60,6 @@
 		4C40A52B1BD6BF25003E9865 /* ExpenseListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpenseListItem.m; sourceTree = "<group>"; };
 		4C40A5301BD71A5B003E9865 /* SummaryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummaryTableViewController.h; sourceTree = "<group>"; };
 		4C40A5311BD71A5B003E9865 /* SummaryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SummaryTableViewController.m; sourceTree = "<group>"; };
-		4CAC04E51BD494A9009C1592 /* XYZToDoListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZToDoListTableViewController.h; sourceTree = "<group>"; };
-		4CAC04E61BD494A9009C1592 /* XYZToDoListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZToDoListTableViewController.m; sourceTree = "<group>"; };
-		4CAC04E71BD494A9009C1592 /* XYZAddToDoItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZAddToDoItemViewController.h; sourceTree = "<group>"; };
-		4CAC04E81BD494A9009C1592 /* XYZAddToDoItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZAddToDoItemViewController.m; sourceTree = "<group>"; };
-		4CAC04E91BD494A9009C1592 /* XYZToDoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZToDoItem.h; sourceTree = "<group>"; };
-		4CAC04EA1BD494A9009C1592 /* XYZToDoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZToDoItem.m; sourceTree = "<group>"; };
 		4CBF8E6A1BD457C100C7ECAC /* SettingsViewBudgetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewBudgetTableViewController.h; sourceTree = "<group>"; };
 		4CBF8E6B1BD457C100C7ECAC /* SettingsViewBudgetTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewBudgetTableViewController.m; sourceTree = "<group>"; };
 		4CD0CEE81BCF318B0003A3C1 /* BudgetAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BudgetAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,19 +156,6 @@
 			name = Data;
 			sourceTree = "<group>";
 		};
-		4CAC04E41BD4948F009C1592 /* to-do-list */ = {
-			isa = PBXGroup;
-			children = (
-				4CAC04E51BD494A9009C1592 /* XYZToDoListTableViewController.h */,
-				4CAC04E61BD494A9009C1592 /* XYZToDoListTableViewController.m */,
-				4CAC04E71BD494A9009C1592 /* XYZAddToDoItemViewController.h */,
-				4CAC04E81BD494A9009C1592 /* XYZAddToDoItemViewController.m */,
-				4CAC04E91BD494A9009C1592 /* XYZToDoItem.h */,
-				4CAC04EA1BD494A9009C1592 /* XYZToDoItem.m */,
-			);
-			name = "to-do-list";
-			sourceTree = "<group>";
-		};
 		4CD0CEDF1BCF318B0003A3C1 = {
 			isa = PBXGroup;
 			children = (
@@ -206,7 +184,6 @@
 				4CD0CEEE1BCF318B0003A3C1 /* AppDelegate.h */,
 				4CD0CEEF1BCF318B0003A3C1 /* AppDelegate.m */,
 				4CD0CEFA1BCF318B0003A3C1 /* Assets.xcassets */,
-				4CAC04E41BD4948F009C1592 /* to-do-list */,
 				4CD0CEFC1BCF318B0003A3C1 /* LaunchScreen.storyboard */,
 				4CD0CEFF1BCF318B0003A3C1 /* Info.plist */,
 				4CD0CEEB1BCF318B0003A3C1 /* Supporting Files */,
@@ -445,11 +422,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CAC04ED1BD494A9009C1592 /* XYZToDoItem.m in Sources */,
 				4CD0CEF61BCF318B0003A3C1 /* ExpensesViewController.m in Sources */,
-				4CAC04EC1BD494A9009C1592 /* XYZAddToDoItemViewController.m in Sources */,
 				4CD0CEF01BCF318B0003A3C1 /* AppDelegate.m in Sources */,
-				4CAC04EB1BD494A9009C1592 /* XYZToDoListTableViewController.m in Sources */,
 				4C40A5231BD68438003E9865 /* DataStore.m in Sources */,
 				4C40A5321BD71A5B003E9865 /* SummaryTableViewController.m in Sources */,
 				4C0F45161BD80AB700F9E30F /* SummaryBudgetListTableViewController.m in Sources */,

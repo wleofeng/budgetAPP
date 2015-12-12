@@ -6,8 +6,9 @@
 //
 
 #import "IonIcons.h"
-#import <QuartzCore/QuartzCore.h>
 #import "FontInspector.h"
+#import <QuartzCore/QuartzCore.h>
+#import <CoreText/CoreText.h>
 
 @implementation IonIcons
 
@@ -16,11 +17,38 @@
 // Font and Label Methods
 //================================
 
+NSString * const fontName = @"ionicons";
+
 + (UIFont*)fontWithSize:(CGFloat)size;
 {
-    UIFont* font = [UIFont fontWithName:@"ionicons" size:size];
-    NSAssert(font, @"Make sure you've added the font to the Info.plist first! View README.md for instructions.");
+    UIFont *font = [UIFont fontWithName:fontName size:size];
+    if (!font) {
+        // Note: we'll only come through here the first time [IonIcons fontWithSize:] is called.
+        // The next time it's called, 'font' should be non-nil after the above initialization.
+        [self registerIoniconsFont];
+        font = [UIFont fontWithName:fontName size:size];
+    }
+    NSAssert(font, @"The ionicons font failed to load.");
     return font;
+}
+
++ (void)registerIoniconsFont
+{
+    NSBundle *ioniconsBundle = [NSBundle bundleWithPath:[[NSBundle bundleForClass:self] pathForResource:@"ionicons" ofType:@"bundle"]];
+    NSURL *url = [ioniconsBundle URLForResource:fontName withExtension:@"ttf"];
+    NSData *fontData = [NSData dataWithContentsOfURL:url];
+    if (fontData) {
+        CFErrorRef error;
+        CGDataProviderRef provider = CGDataProviderCreateWithCFData((CFDataRef)fontData);
+        CGFontRef font = CGFontCreateWithDataProvider(provider);
+        if (! CTFontManagerRegisterGraphicsFont(font, &error)) {
+            CFStringRef errorDescription = CFErrorCopyDescription(error);
+            NSLog(@"Failed to load font: %@", errorDescription);
+            CFRelease(errorDescription);
+        }
+        CFRelease(font);
+        CFRelease(provider);
+    }
 }
 
 + (UILabel*)labelWithIcon:(NSString*)icon_name
@@ -78,7 +106,7 @@
         [self checkGlyphsReferencedByString:icon_name existInFont:font];
         
         if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 6) {
-            image = [self renderImageWithNSStirngDrawingWithIconName:icon_name
+            image = [self renderImageWithNSStringDrawingWithIconName:icon_name
                                                            iconColor:iconColor
                                                             iconSize:iconSize
                                                            imageSize:imageSize];
@@ -107,7 +135,7 @@
     return exists;
 }
 
-+ (UIImage*)renderImageWithNSStirngDrawingWithIconName:(NSString*)icon_name iconColor:(UIColor*)iconColor iconSize:(CGFloat)iconSize imageSize:(CGSize)imageSize
++ (UIImage*)renderImageWithNSStringDrawingWithIconName:(NSString*)icon_name iconColor:(UIColor*)iconColor iconSize:(CGFloat)iconSize imageSize:(CGSize)imageSize
 {
     if (!iconColor) { iconColor = [self defaultColor]; }
     

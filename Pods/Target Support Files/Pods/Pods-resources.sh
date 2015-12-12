@@ -58,10 +58,10 @@ install_resource()
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_resource "ionicons/ionicons/ionicons.ttf"
+  install_resource "ionicons/ionicons/ionicons.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_resource "ionicons/ionicons/ionicons.ttf"
+  install_resource "ionicons/ionicons/ionicons.bundle"
 fi
 
 mkdir -p "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
