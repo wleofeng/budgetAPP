@@ -1,5 +1,10 @@
 # BudgetAPP
 
+An iOS application that tracks personal budget and expense. User has the ability to set up a personal budget for a desired date range. Each day user can track his/her expense amounts with additional details. A summary page containing budget and expense information along with various calculation results is available to user for making better financial decisions.
+
+# Demo
+[![IMAGE ALT TEXT](DemoImage.png)](https://vimeo.com/148703284 "Demo Video")
+
 Details - 
 https://medium.com/@wleofeng/making-the-budgetapp-486b195163a0#.wuga4n9yx
 
