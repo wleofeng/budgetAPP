@@ -197,7 +197,9 @@
     if ([self isValidAmount:amount]) {
         if (amount.length == 1 && [amount isEqualToString:@"."]) {
             _amount = @"0.";
-        } else {
+        } else if (amount.length == 1 && [amount isEqualToString:@"0"])
+            _amount = @"";
+        else {
         _amount = amount;
         }
     } else {
