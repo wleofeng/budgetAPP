@@ -42,46 +42,15 @@
     //set the navigation controller tile color to FIS blue
     [self.navigationController.navigationBar setTitleTextAttributes:
      @{NSForegroundColorAttributeName:[UIColor colorWithRed:0.3216 green:0.749 blue:1.0 alpha:1.0]}];
-
     
     //display total budget
     self.budgetList = [DataStore sharedDataStore].budgetListItems;
-//    self.startDatePicker.date = [DataStore sharedDataStore].startDate;
-//    self.endDatePicker.date = [DataStore sharedDataStore].endDate;
-
-    //self.sideBudgetAmountTextView.text = @"2100012.80";
-    
-//    UIImage *icon = [IonIcons imageWithIcon:@"\uf411"
-//                                  iconColor:[UIColor colorWithRed:0.225 green:0.1965 blue:1.0 alpha:1.0]
-//                                   iconSize:40.0f
-//                                  imageSize:CGSizeMake(90.0f, 90.0f)];
-//    
-//    if (self.tabBarController) {
-//        UITabBarItem *tbi = [self tabBarItem];
-//        [tbi setImage:icon];
-//        [self setTabBarItem:tbi];
-//    }
-    
 }
-
-
-
-
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
-//    if (self.tabBarController) {
-////        UITabBarItem *tabBarItem = [self tabBarItem];
-//        UITabBarItem *tbi = [self tabBarItem];
-//        [tbi setImage:[UIImage imageNamed:@"tab-bar-item-icon"]];
-//        [tbi setTitle:@"BUDGET"];
-////        [tbi setBadgeValue:@""];
-//        [self setTabBarItem:tbi];
-//    }
-//    
-
     NSDecimalNumber* total = [[NSDecimalNumber alloc] initWithString:[NSString stringWithFormat:@"%f", 0.0]];
 
     for (BudgetListItem *item in self.budgetList) {
@@ -92,12 +61,26 @@
 }
 
 - (IBAction)saveButtonTapped:(id)sender {
-    //lock in values
-    [self disableEditingForBudgetSetup];
     
-    //set start and end dates to data store class
-    [DataStore sharedDataStore].startDate =  self.startDatePicker.date;
-    [DataStore sharedDataStore].endDate =  self.endDatePicker.date;
+    if ([self isValidDateRange]) {
+        //lock in values
+        [self disableEditingForBudgetSetup];
+        
+        //set start and end dates to data store class
+        [DataStore sharedDataStore].startDate =  self.startDatePicker.date;
+        [DataStore sharedDataStore].endDate =  self.endDatePicker.date;
+    } else {
+        //show alert
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Invalid Date Range"
+                                                                       message:@"Please make sure start date is earlier than end date"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {}];
+        
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
 }
 
 - (IBAction)resetButtonTapped:(id)sender {
@@ -139,6 +122,8 @@
     self.editButton.hidden = NO;
 }
 
-
+- (BOOL)isValidDateRange {
+    return [self.startDatePicker.date compare:self.endDatePicker.date] == NSOrderedAscending;
+}
 
 @end

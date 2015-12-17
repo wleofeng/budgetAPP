@@ -12,7 +12,9 @@
 #import "ionicons.h"
 
 
-@interface ExpensesViewController ()
+
+@interface ExpensesViewController () <UITextFieldDelegate>
+
 @property (weak, nonatomic) IBOutlet UITextView *amountTextView;
 @property (weak, nonatomic) IBOutlet UIButton *number1Button;
 @property (weak, nonatomic) IBOutlet UIButton *number2Button;
@@ -47,17 +49,7 @@
     
     self.expenseList = [DataStore sharedDataStore].expenseListItems;
     
-    //setting icons
-//    UIImage *icon = [IonIcons imageWithIcon:@"\uf119"
-//                                  iconColor:[UIColor colorWithRed:0.225 green:0.1965 blue:1.0 alpha:1.0]
-//                                   iconSize:40.0f
-//                                  imageSize:CGSizeMake(90.0f, 90.0f)];
-//    
-//    if (self.tabBarController) {
-//        UITabBarItem *tbi = [self tabBarItem];
-//        [tbi setImage:icon];
-//        [self setTabBarItem:tbi];
-//    }
+
 }
 
 - (IBAction)number1Tapped:(id)sender {
@@ -175,11 +167,44 @@
     }
 }
 
--(BOOL)isValidAmount:(NSString *)amount{
-    if (![amount isEqualToString:@""]) {
-        return YES;
+
+- (BOOL)isValidAmount:(NSString *)amount {
+    //validate amount before setting
+    NSMutableArray *charArray = [NSMutableArray array];
+    for (int i = 0; i < [amount length]; i++) {
+        [charArray addObject:[NSString stringWithFormat:@"%C", [amount characterAtIndex:i]]];
     }
-    return NO;
+    
+    NSPredicate *filterPeriod = [NSPredicate predicateWithFormat:@"self == %@", @"."];
+    
+    NSArray *result = [charArray filteredArrayUsingPredicate:filterPeriod];
+
+    if (result.count > 1 ) {
+        return NO;
+    }
+
+    if (charArray.count > 3 &&
+        [charArray[charArray.count-4] isEqualToString:@"."]) {
+        return NO;
+    }
+    
+    return YES;
 }
+
+- (void)setAmount:(NSString *)amount {
+    NSString *orignalAmount = _amount;
+    
+    if ([self isValidAmount:amount]) {
+        if (amount.length == 1 && [amount isEqualToString:@"."]) {
+            _amount = @"0.";
+        } else {
+        _amount = amount;
+        }
+    } else {
+        _amount = orignalAmount;
+    }
+    
+}
+
 
 @end
